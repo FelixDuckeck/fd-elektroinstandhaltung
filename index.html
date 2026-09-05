@@ -25,49 +25,49 @@
       color: #222;
     }
 
-/* Header */
-header {
-background: linear-gradient(135deg, #050b14, var(--navy));
-color: var(--light);
-padding: 30px 20px;
-}
- 
-.header-inner {
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-gap: 20px;
-align-items: center;
-}
- 
-.header-left {
-display: flex;
-gap: 20px;
-align-items: center;
-flex-wrap: wrap;
-}
- 
-.logo img {
-height: 80px;
-}
- 
-.header-text h1 {
-margin: 0;
-font-size: 2rem;
-font-weight: 600;
-}
- 
-.header-text p {
-margin: 5px 0 0;
-font-size: 1rem;
-opacity: 0.85;
-}
- 
-.header-right {
-text-align: right;
-}
- 
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #050b14, var(--navy));
+      color: var(--light);
+      padding: 30px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
 .portrait img {
 height: 220px;
 width: 170px;
@@ -222,22 +222,27 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
   </script>
 
+</head>
+<body>
+
 <header>
-<div class="header-inner">
-<div class="header-left">
-<div class="logo">
-Kopfzeile.png
-</div>
-<div class="header-text">
-<h1>FD‑Elektroinstandhaltung</h1>
-</div>
-</div>
-<div class="header-right">
-<div class="portrait">
-Profilbild.png
-</div>
-</div>
-</div>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo">
+        <!-- Dein Logo-Bild -->
+        <img src="Kopfzeile.png" alt="FD-Elektroinstandhaltung Logo">
+      </div>
+      <div class="header-text">
+        <h1>FD‑Elektroinstandhaltung</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="portrait">
+        <!-- Dein Portrait-Bild -->
+        <img src="Profilbild.png" alt="Portrait von Felix Duckeck">
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
