@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>FD-Elektroinstandhaltung – Felix Duckeck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Moderne Schrift -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0a1a2f;
+      --gold: #d4a94a;
+      --light: #ffffff;
+      --bg: #f3f4f7;
+      --card: #ffffff;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #050b14, var(--navy));
+      color: var(--light);
+      padding: 30px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .portrait img {
+      height: 130px;
+      width: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Main */
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--navy);
+      margin-top: 0;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-left: 4px solid var(--gold);
+      padding-left: 10px;
+    }
+
+    /* Über mich */
+    .section p em {
+      color: #555;
+    }
+
+    /* Leistungen */
+    .leistungen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .leistung-card {
+      background: #f8f9fc;
+      border-radius: 10px;
+      padding: 18px;
+      border: 1px solid #e0e3eb;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .leistung-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .leistung-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
+    /* Öffnungszeiten */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    table th {
+      background: #f0f2f7;
+    }
+
+    /* Kontakt & Impressum Toggle */
+    .hidden-section {
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: var(--light);
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+    }
+
+    .footer-buttons {
+      margin-bottom: 10px;
+    }
+
+    .footer-button {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 18px;
+      margin: 5px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .footer-button:hover {
+      background: #c09335;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .header-right {
+        text-align: center;
+      }
+      .header-left {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = (section.style.display === "block") ? "none" : "block";
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  </script>
+
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo">
+        <!-- Dein Logo-Bild -->
+        <img src="logo-fd-elektroinstandhaltung.png" alt="FD-Elektroinstandhaltung Logo">
+      </div>
+      <div class="header-text">
+        <h1>FD‑Elektroinstandhaltung</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="portrait">
+        <!-- Dein Portrait-Bild -->
+        <img src="felix-duckeck-portrait-optimiert.jpg" alt="Portrait von Felix Duckeck">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Über mich -->
+  <section class="section">
+    <h2>Über mich</h2>
+    <p><strong>Felix Duckeck – Elektriker für kleine Elektroarbeiten</strong></p>
+    <p>Ich biete Elektroarbeiten im privaten und geschäftlichen Bereich an – schnell, zuverlässig, sauber und transparent.</p>
+    <p><em>Keine Arbeiten an Zählerplätzen, Hauptleitungen oder Neuinstallationen im Rohbau.</em></p>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="section">
+    <h2>Leistungen</h2>
+
+    <div class="leistungen-grid">
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
+        </div>
+        <div>Installation von Außenbeleuchtungen</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1zm3-19a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V18h8v-3.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
+        </div>
+        <div>Installation von Beleuchtungskörpern</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M7 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm6 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/><path d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2z"/></svg>
+        </div>
+        <div>Installation von elektrischen Steckdosen und Schaltern</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 7l-2 2-3-3 2-2a3 3 0 1 0-4-4l-2 2 3 3-2 2-3-3-8 8 3 3 8-8 3 3-2 2 3 3 2-2a3 3 0 1 0 4-4z"/></svg>
+        </div>
+        <div>Reparatur von elektrischen Steckdosen und Schaltern</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>
+        </div>
+        <div>Allgemeine Reparaturen</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10v20H7z"/></svg>
+        </div>
+        <div>Austausch von elektrischen Sicherungen</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+        </div>
+        <div>Elektrische Überprüfung</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 3h14v18H5z"/></svg>
+        </div>
+        <div>Installation von elektrischen Vorrichtungen</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 21h6v-1H9z"/><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V18h8v-3.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
+        </div>
+        <div>Reparatur von Beleuchtungskörpern</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16v2H4zm0 4h10v2H4zm0 4h7v2H4z"/></svg>
+        </div>
+        <div>Reparatur von elektrischen Leitungen</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7h2a5 5 0 0 1 10 0h2a7 7 0 0 0-7-7z"/></svg>
+        </div>
+        <div>Installation von Bewegungsmeldern</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"/></svg>
+        </div>
+        <div>Fehlersuche</div>
+      </div>
+
+      <div class="leistung-card">
+        <div class="leistung-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L4 20h16z"/></svg>
+        </div>
+        <div>Fehlerbehebung</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Öffnungszeiten -->
+  <section class="section">
+    <h2>Öffnungszeiten</h2>
+    <table>
+      <tr><th>Tag</th><th>Uhrzeit</th></tr>
+      <tr><td>Montag – Freitag</td><td>17:00 – 19:00 Uhr</td></tr>
+      <tr><td>Samstag</td><td>07:00 – 17:30 Uhr</td></tr>
+      <tr><td>Sonntag</td><td>geschlossen</td></tr>
+    </table>
+  </section>
+
+<section id="preise" class="section hidden-section">
+    <h2>Preise</h2>
+
+    <p><strong>Arbeitszeit:</strong> 75,00 € pro angefangener Stunde</p>
+    <p><strong>An- & Abfahrt:</strong> 0,70 € pro gefahrenen Kilometer</p>
+    <p><strong>Fahrtzeit:</strong> 37,50 € pro Stunde (tatsächliche Fahrzeit)</p>
+    <p><strong>Materialkosten:</strong> nach tatsächlichem Verbrauch</p>
+    <p><strong>Kleinmaterial:</strong> pauschal nach Aufwand</p>
+</section>
+
+  <!-- Kontakt (Toggle) -->
+  <section id="kontakt" class="section hidden-section">
+    <h2>Kontakt</h2>
+    <p><strong>FD‑Elektroinstandhaltung</strong><br>
+       Felix Duckeck<br>
+       Zweibrücker Str. 26<br>
+       76855 Annweiler am Trifels
+    </p>
+    <p>
+      Telefon: <a href="tel:017630338562">0176 30338562</a><br>
+      E‑Mail: <a href="mailto:felix.duckeck@fd-elektroinstandhaltung.de">
+        felix.duckeck@fd-elektroinstandhaltung.de
+      </a>
+    </p>
+  </section>
+
+  <!-- Impressum (Toggle) -->
+  <section id="impressum" class="section hidden-section">
+    <h2>Impressum</h2>
+
+    <p><strong>FD‑Elektroinstandhaltung</strong><br>
+    Inhaber: Felix Duckeck<br>
+    Zweibrücker Str. 26<br>
+    76855 Annweiler am Trifels<br>
+    Deutschland</p>
+
+    <p>Telefon: <a href="tel:017630338562">0176 30338562</a><br>
+    E‑Mail: felix.duckeck@fd-elektroinstandhaltung.de</p>
+
+    <p><strong>Rechtsform:</strong><br>
+    Einzelunternehmen<br>
+    Kleinunternehmer gemäß § 19 UStG</p>
+
+    <p><strong>Verantwortlich nach § 18 Abs. 2 MStV:</strong><br>
+    Felix Duckeck</p>
+
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte verantwortlich.</p>
+
+    <h3>Haftung für Links</h3>
+    <p>Für Inhalte externer Links übernehme ich keine Haftung.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Alle Inhalte dieser Website unterliegen dem deutschen Urheberrecht.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-buttons">
+    <a class="footer-button" onclick="toggleSection('kontakt')">Kontakt</a>
+    <a class="footer-button" onclick="toggleSection('impressum')">Impressum</a>
+    <a class="footer-button" onclick="toggleSection('preise')">Preise</a>
+  </div>
+  <p>© 2026 FD‑Elektroinstandhaltung – Felix Duckeck</p>
+</footer>
+
+</body>
