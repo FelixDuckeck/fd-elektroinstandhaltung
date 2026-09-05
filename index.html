@@ -25,90 +25,62 @@
       color: #222;
     }
 
-/* Hero Header */
- 
-.hero {
-background: linear-gradient(
-135deg,
-#050b14 0%,
-#0a1a2f 100%);
-color: white;
-padding: 70px 20px;
+/* Header */
+header {
+background: linear-gradient(135deg, #050b14, var(--navy));
+color: var(--light);
+padding: 30px 20px;
 }
  
-.hero-content {
-max-width: 1200px;
-margin: auto;
- 
+.header-inner {
+max-width: 1100px;
+margin: 0 auto;
 display: grid;
-grid-template-columns: 2fr 1fr;
-gap: 60px;
- 
+grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+gap: 20px;
 align-items: center;
 }
  
-.hero-logo {
-width: 320px;
-max-width: 100%;
-margin-bottom: 25px;
-}
- 
-.hero h1 {
-margin: 0;
-font-size: 3.4rem;
-font-weight: 600;
-line-height: 1.1;
-}
- 
-.hero-subtitle {
-font-size: 1.35rem;
-margin-top: 18px;
-opacity: .9;
-line-height: 1.6;
-}
- 
-.hero-right {
+.header-left {
 display: flex;
-justify-content: center;
+gap: 20px;
 align-items: center;
+flex-wrap: wrap;
 }
  
-.hero-portrait {
-width: 380px;
-max-width: 100%;
-height: auto;
- 
-border-radius: 20px;
- 
-border: 4px solid #d4a94a;
- 
-box-shadow:
-0 20px 50px rgba(0,0,0,.35);
+.logo img {
+height: 80px;
 }
  
-@media (max-width:768px) {
- 
-.hero-content {
-grid-template-columns: 1fr;
-text-align: center;
+.header-text h1 {
+margin: 0;
+font-size: 2rem;
+font-weight: 600;
 }
  
-.hero-logo {
-margin: auto auto 25px;
+.header-text p {
+margin: 5px 0 0;
+font-size: 1rem;
+opacity: 0.85;
 }
  
-.hero h1 {
-font-size: 2.2rem;
+.header-right {
+text-align: right;
 }
  
-.hero-subtitle {
-font-size: 1.1rem;
-}
+.portrait img {
+height: 220px;
+width: 170px;
  
-.hero-portrait {
-width: 250px;
-margin-top: 20px;
-}
+border-radius: 12px;
+ 
+border: 3px solid var(--gold);
+ 
+object-fit: contain;
+ 
+background: white;
+ 
+box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
     /* Main */
@@ -250,34 +222,22 @@ margin-top: 20px;
     }
   </script>
 
-</head>
-<body>
-
-<header class="hero">
- 
-<div class="hero-content">
- 
-<div class="hero-left">
- 
-<img
-src="Kopfzeile.png"
-altung</h1>
- 
-<p class="hero-subtitle">
-Zuverlässige Elektroarbeiten<br>
-in Annweiler am Trifels und Umgebung
-</p>
- 
+<header>
+<div class="header-inner">
+<div class="header-left">
+<div class="logo">
+Kopfzeile.png
 </div>
- 
-<div class="hero-right">
- 
+<div class="header-text">
+<h1>FD‑Elektroinstandhaltung</h1>
+</div>
+</div>
+<div class="header-right">
+<div class="portrait">
 Profilbild.png
- 
 </div>
- 
 </div>
- 
+</div>
 </header>
 
 <main>
