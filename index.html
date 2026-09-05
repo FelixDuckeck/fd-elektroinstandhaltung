@@ -202,32 +202,40 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
 @media (max-width: 768px) {
-.header-inner {
-grid-template-columns: 1fr;
-text-align: center;
-}
  
-.header-right {
+.header-inner {
+display: flex;
+flex-direction: column;
+align-items: center;
 text-align: center;
 }
  
 .header-left {
+flex-direction: column;
+align-items: center;
 justify-content: center;
 }
  
+.header-text {
+width: 100%;
+}
+ 
 .header-text h1 {
-font-size: 1.6rem;
+font-size: 1.8rem;
 line-height: 1.2;
-word-break: break-word;
+margin-top: 15px;
 }
  
 .logo img {
-max-width: 140px;
-height: auto;
+height: 100px;
+}
+ 
+.portrait {
+margin-top: 20px;
 }
  
 .portrait img {
-width: 140px;
+width: 180px;
 height: auto;
 }
 }
@@ -252,7 +260,9 @@ height: auto;
         <img src="Kopfzeile.png" alt="FD-Elektroinstandhaltung Logo">
       </div>
       <div class="header-text">
-        <h1>FD‑Elektroinstandhaltung</h1>
+        <h1>FD‑Elektro<br>
+          Instandhaltung
+        </h1>
       </div>
     </div>
     <div class="header-right">
