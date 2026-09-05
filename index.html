@@ -72,15 +72,27 @@ overflow-x: hidden;
 .portrait img {
 height: 220px;
 width: 170px;
- 
 border-radius: 12px;
- 
 border: 3px solid var(--gold);
- 
 object-fit: contain;
- 
 background: white;
+box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+    
+    .portrait-section {
+background: linear-gradient(135deg, #050b14, var(--navy));
+margin: 0;
+border-radius: 0;
+box-shadow: none;
+text-align: center;
+}
  
+.portrait-center img {
+width: 220px;
+height: auto;
+border-radius: 12px;
+border: 3px solid var(--gold);
+background: white;
 box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
@@ -204,30 +216,26 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 @media (max-width: 768px) {
  
 .header-inner {
-display: flex;
-flex-direction: column;
-align-items: center;
+display: block;
 text-align: center;
 }
  
 .header-left {
-flex-direction: column;
-align-items: center;
-justify-content: center;
+display: block;
 }
  
-.header-text {
-width: 100%;
-}
- 
-.header-text h1 {
-font-size: 1.8rem;
-line-height: 1.2;
-margin-top: 15px;
+.logo {
+margin-bottom: 20px;
 }
  
 .logo img {
 height: 100px;
+}
+ 
+.header-text h1 {
+font-size: 1.8rem;
+margin: 15px 0;
+line-height: 1.2;
 }
  
 .portrait {
@@ -235,9 +243,10 @@ margin-top: 20px;
 }
  
 .portrait img {
-width: 180px;
+width: 160px;
 height: auto;
 }
+ 
 }
   </style>
 
@@ -265,14 +274,14 @@ height: auto;
         </h1>
       </div>
     </div>
-    <div class="header-right">
-      <div class="portrait">
-        <!-- Dein Portrait-Bild -->
-        <img src="Profilbild.png" alt="Portrait von Felix Duckeck">
-      </div>
-    </div>
   </div>
 </header>
+
+  <section class="section portrait-section">
+<div class="portrait-center">
+Profilbild.png
+</div>
+</section>
 
 <main>
 
